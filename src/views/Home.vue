@@ -1,23 +1,28 @@
 <template>
   <el-container class="container">
-    <el-header>Header</el-header>
-    <el-main>main </el-main>
-    <el-footer>
-      <foot/>
-    </el-footer>
+    <el-header height="auto">
+      <page-header />
+    </el-header>
+    <el-main>
+      <page-main />
+    </el-main>
+    <page-footer />
   </el-container>
 </template>
 
 <script>
-import foot from "./footer.vue";
+import pageFooter from "./pageFooter.vue";
+import pageHeader from "./pageHeader.vue";
+import pageMain from "./pageMain.vue";
 export default {
+  name: "home",
   components: {
-    foot,
+    pageFooter,
+    pageHeader,
+    pageMain,
   },
   data() {
-    return {
-      radio1: "",
-    };
+    return {};
   },
 };
 </script>
@@ -28,12 +33,12 @@ export default {
   height: 100vh;
   .el-main {
     background-color: #eef0f3;
+    padding: 0;
   }
-}
 
-.el-header,
-.el-footer {
-  text-align: center;
-  line-height: 60px;
+  .el-header {
+    padding: 0;
+    text-align: center;
+  }
 }
 </style>
