@@ -24,18 +24,13 @@ module.exports = {
       }
     },
     devServer: {
-      // proxy: {
-      //   '/api': {
-      //     target: 'http://localhost:4000',
-      //     changeOrigin: true,
-      //     pathRewrite: { '^/api': '' }
-      //   },
-      //   '/': {
-      //     target: 'http://localhost:4000',
-      //     changeOrigin: true,
-      //     // pathRewrite: { '': '' }
-      //   }
-      // },
+      proxy: {
+        '/test': {
+          target: 'http://apis.jsykaj.com',
+          changeOrigin: true,
+          pathRewrite: { '^/test': '' }
+        }
+      },
       port: 8001,     // 端口
       // host: '192.168.0.108'
     },

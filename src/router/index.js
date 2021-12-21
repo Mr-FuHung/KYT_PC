@@ -8,19 +8,31 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    meta:{
-      title:'康益堂'
+    redirect: '/home',
+    meta: {
+      title: '康益堂'
     },
-    component: home
+    component: home,
+    children: [
+      {
+        path: 'home',
+        name: 'home',
+        meta: {
+          title: '康益堂'
+        },
+        component: home
+      },
+      {
+        path: 'about',
+        name: 'about',
+        meta: {
+          title: '关于我们'
+        },
+        component: () => import(/* webpackChunkName: "about" */ '../views/home.vue')
+      }
+    ]
   },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/home.vue')
-  }
+
 ]
 
 const router = new VueRouter({
@@ -32,10 +44,10 @@ const router = new VueRouter({
 })
 router.beforeEach((to, from, next) => {
   if (true) {//验证路径是否存在
-      document.title = to.meta.title;//修改页面title
-      next()
+    document.title = to.meta.title;//修改页面title
+    next()
   } else {
-      next('/404')
+    next('/404')
   }
 })
 export default router

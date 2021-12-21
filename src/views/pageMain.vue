@@ -11,6 +11,14 @@
 <script>
 export default {
   name: "pageMain",
+  created() {
+    // this.getBanner();
+  },
+  methods: {
+    async getBanner() {
+      await this.$api.getBanner({type:1});
+    },
+  },
 };
 </script>
 

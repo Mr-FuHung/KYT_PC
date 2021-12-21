@@ -6,12 +6,11 @@ const env = process.env.NODE_ENV;
 console.log('env',env)
 const EnvConfig = {
     development: {
-        baseApi: '/v1',
+        baseApi: '/test',
         mockApi: 'https://www.fastmock.site/mock/0f849fac2bea76617f56addc773b86e5/blog' 
     },
     production: {
-        baseApi: '/blog/v1',
-        mockApi: 'https://www.fastmock.site/mock/0f849fac2bea76617f56addc773b86e5/blog'
+        baseApi: 'http://apis.jsykaj.com'
     }
 }
 

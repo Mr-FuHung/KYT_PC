@@ -20,9 +20,9 @@ const instance = axios.create({
 // 添加请求拦截器
 instance.interceptors.request.use(request => {
     // 在发送请求之前做些什么
-    const headers = request.headers;
-    const { token } = storage.getItem('userInfo') || {};
-    headers.Authorization || (headers.Authorization = `Bearer ${token}`)
+    // const headers = request.headers;
+    // const { token } = storage.getItem('userInfo') || {};
+    // headers.Authorization || (headers.Authorization = `Bearer ${token}`)
     return request;
 }, error => {
     // 对请求错误做些什么
@@ -38,7 +38,7 @@ instance.interceptors.response.use(response => {
         return { data, msg };
     } else if (code === 40001) {
         Message.error(msg);
-        store.commit('saveUserInfo', {})
+        // store.commit('saveUserInfo', {})
         return Promise.reject(msg);
     } else {
         Message.error(msg || NETWORK_ERROR);
