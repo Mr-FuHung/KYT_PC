@@ -23,7 +23,7 @@ export default {
       pathList: [
         {
           title: "首页",
-          path: "/home",
+          path: "/index",
         },
         {
           title: "关于我们",

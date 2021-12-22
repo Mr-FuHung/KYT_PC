@@ -1,26 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import home from '../views/home.vue'
+import index from '../views/index.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    redirect: '/home',
-    meta: {
-      title: '康益堂'
-    },
-    component: home,
+    redirect: '/index',
+    component: index,
     children: [
       {
-        path: 'home',
-        name: 'home',
+        path: 'index',
+        name: 'index',
         meta: {
           title: '康益堂'
         },
-        component: home
+        component: index
       },
       {
         path: 'about',
@@ -28,7 +24,7 @@ const routes = [
         meta: {
           title: '关于我们'
         },
-        component: () => import(/* webpackChunkName: "about" */ '../views/home.vue')
+        component: () => import(/* webpackChunkName: "about" */ '../views/index.vue')
       }
     ]
   },

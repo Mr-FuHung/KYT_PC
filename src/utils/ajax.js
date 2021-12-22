@@ -34,9 +34,9 @@ instance.interceptors.request.use(request => {
 instance.interceptors.response.use(response => {
     const { code, data, msg } = response.data;
     // 对响应数据做点什么
-    if (code === 200) {
+    if (code === 1) {
         return { data, msg };
-    } else if (code === 40001) {
+    } else if (code === 0) {
         Message.error(msg);
         // store.commit('saveUserInfo', {})
         return Promise.reject(msg);
