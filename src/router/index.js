@@ -1,22 +1,33 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import index from '../views/index.vue'
+import home from '../views/home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '*',
+    // redirect(to) {
+    //   return { name: '404' }
+    // },
+    meta: {
+      title: '404'
+    },
+    component: () => import('@/views/404.vue')
+  },
+  {
     path: '/',
-    redirect: '/index',
+    redirect: '/home',
     component: index,
     children: [
       {
-        path: 'index',
-        name: 'index',
+        path: 'home',
+        name: 'home',
         meta: {
           title: '康益堂'
         },
-        component: index
+        component: home
       },
       {
         path: 'about',
@@ -24,7 +35,7 @@ const routes = [
         meta: {
           title: '关于我们'
         },
-        component: () => import(/* webpackChunkName: "about" */ '../views/index.vue')
+        component: () => import(/* webpackChunkName: "about" */ '@/views/index.vue')
       }
     ]
   },
