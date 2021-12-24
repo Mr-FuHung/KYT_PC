@@ -1,6 +1,7 @@
 <template>
   <div class="header">
     <img src="@/assets/images/kyt.png" class="logo" alt="康益堂" />
+    <!-- 首页 / 关于我们 / 产品服务 ....  -->
     <div class="nav">
       <router-link
         :to="item.path"

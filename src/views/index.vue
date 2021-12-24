@@ -4,7 +4,7 @@
       <page-header />
     </el-header>
     <!-- Banner图 -->
-    <banner/>
+    <banner />
     <!-- 内容 -->
     <el-main>
       <page-main />
@@ -37,7 +37,7 @@ export default {
   position: relative;
   // height: 100vh;
   .el-main {
-    background-color: #eef0f3;
+    background-color: #fff;
     padding: 0;
   }
 

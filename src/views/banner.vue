@@ -1,5 +1,6 @@
 <template>
   <div class="banner">
+    <!-- 轮播图 -->
     <el-carousel
       :indicator-position="Banner.length > 1 ? 'inside' : 'none'"
       style="height: 100%"
