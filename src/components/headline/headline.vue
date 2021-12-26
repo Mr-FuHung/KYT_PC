@@ -32,14 +32,15 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: .08rem;
+    border-radius: 0.08rem;
   }
   .desc {
     position: relative;
     height: 0.4rem;
+    width: 1.2rem;
     h4 {
       font-size: 0.24rem;
-      font-weight:  600;
+      font-weight: 600;
       position: absolute;
       left: 0.05rem;
       bottom: 0.1rem;

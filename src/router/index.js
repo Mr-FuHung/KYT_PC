@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import index from '../views/index.vue'
-import home from '../views/home.vue'
+import home from '../views/home/home.vue'
 
 Vue.use(VueRouter)
 
@@ -33,9 +33,36 @@ const routes = [
         path: 'about',
         name: 'about',
         meta: {
-          title: '关于我们'
+          title: '关于我们',
+          keepAlive: true
         },
-        component: () => import(/* webpackChunkName: "about" */ '@/views/index.vue')
+        component: () => import(/* webpackChunkName: "about" */ '@/views/aboutUs/aboutUs.vue')
+      },
+      {
+        path: 'join',
+        name: 'join',
+        meta: {
+          title: '加入我们',
+          keepAlive: true
+        },
+        component: () => import('@/views/joinUs/joinUs.vue')
+      },
+      {
+        path: 'contact',
+        name: 'contact',
+        meta: {
+          title: '联系我们',
+          keepAlive: true
+        },
+        component: () => import('@/views/contactUs/contactUs.vue')
+      },
+      {
+        path: '/home/health',
+        name: 'health',
+        meta: {
+          title: '健康小课堂'
+        },
+        component: () => import(/* webpackChunkName: "about" */ '@/views/healthClass/healthClass.vue')
       }
     ]
   },

@@ -15,7 +15,13 @@ export default {
     }),
     //about 关于我们 lianxi 联系我们 join 加入我们
     getSetting: data=> $ajax({
-        url: '/api/Web/indexHot',
+        url: '/api/Web/setting',
+        method:'post',
+        data
+    }),
+    //文章列表
+    getArticle: data=> $ajax({
+        url: '/api/Web/getArticle',
         method:'post',
         data
     }),

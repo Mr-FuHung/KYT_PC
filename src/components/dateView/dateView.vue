@@ -60,10 +60,11 @@ export default {
   .dayBox {
     margin-bottom: 0.1rem;
     color: #00244b;
+    width: .4rem;
     border-radius: 0.08rem;
     border: 2px #00244b solid;
     background: #fff;
-    padding: 0.1rem 0.1rem 0.1rem 0.06rem;
+    padding: 0.08rem 0.02rem 0.08rem 0.04rem;
     .num {
       font-size: 0.2rem;
     }

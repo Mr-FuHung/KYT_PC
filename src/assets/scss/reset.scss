@@ -10,6 +10,8 @@ applet,
 object,
 p,
 blockquote,
+ul,
+li,
 a,
 abbr,
 acronym,
@@ -99,6 +101,11 @@ th,
 td {
 	vertical-align: middle;
 }
+ul,
+ol,
+li {
+	list-style: none;
+}
 /* custom */
 a {
 	outline: none;
@@ -129,8 +136,9 @@ body {
 	font-family: Microsoft Yahei;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	max-width: 19.20rem;
+	max-width: 19.2rem;
 	min-width: 9.7rem;
 	width: 100%;
 	line-height: 1.5;
+	user-select: none;
 }
